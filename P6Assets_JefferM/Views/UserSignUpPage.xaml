@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P6Assets_JefferM.Views.UserSignUpPage"
+             Title="UserSignUpPage">
+
+    <VerticalStackLayout Padding="20" BackgroundColor="#08072F" >
+
+        <Entry x:Name="TxtUserName" Placeholder="Username / Email" 
+               Margin="0,5,0,5" TextColor="WhiteSmoke" 
+               Keyboard="Email">
+
+            <Entry.Triggers>
+                <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="GreenYellow"/>
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                </Trigger>
+            </Entry.Triggers>
+
+        </Entry>
+
+        <Entry x:Name="TxtCardId" Placeholder="Card ID" Margin="0,5,0,5" TextColor="WhiteSmoke" Keyboard="Numeric" />
+
+        <Entry x:Name="TxtFirstName" Placeholder="First Name" Margin="0,5,0,5" TextColor="WhiteSmoke"/>
+
+        <Entry x:Name="TxtLastName" Placeholder="Last Name" Margin="0,5,0,5" TextColor="WhiteSmoke"/>
+
+        <Entry x:Name="TxtPhoneNumber" Placeholder="Phone Number" Margin="0,5,0,5" TextColor="WhiteSmoke" Keyboard="Telephone" />
+
+        <Editor x:Name="TxtAddress" Placeholder="Address" Margin="0,5,0,5" TextColor="WhiteSmoke" HeightRequest="100" />
+
+        <Entry x:Name="TxtPassword" Placeholder="Password" Margin="0,5,0,5" TextColor="WhiteSmoke" />
+
+        <Picker x:Name="CboxUserRole" Title="Select User Role" TextColor="WhiteSmoke" TitleColor="DimGrey" ItemDisplayBinding="{Binding UserRoleDescription}"/>
+
+        <StackLayout Orientation="Horizontal" Visual=""  >
+            <Button x:Name="BtnAdd" Text="ADD" Margin="0,20,5,5" Clicked="BtnAdd_Clicked" BackgroundColor="Green"/>
+            <Button x:Name="BtnCancel" Text="CANCEL" Margin="5,20,0,5" Clicked="BtnCancel_Clicked" BackgroundColor="Maroon" />
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
